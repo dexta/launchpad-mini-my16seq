@@ -1,0 +1,20 @@
+{
+  "name": "launchmyseq16",
+  "version": "0.0.1",
+  "description": "16 step sequncer for launchpad mini",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "launchpad",
+    "launchpad-mini",
+    "midi",
+    "sequncer"
+  ],
+  "author": "dexta.de",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "launchpad-mini": "^2.3.1"
+  }
+}

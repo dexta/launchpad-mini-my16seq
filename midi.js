@@ -1,0 +1,26 @@
+// copyed from https://github.com/katspaugh/launchpad-seq/blob/master/midi.js
+const midi = require('midi');
+
+function connect(outputName) {
+  const output = new midi.Output();
+
+  const outs = output.getPortCount();
+  console.log(`MIDI Output name ${outputName}`);
+  console.dir(outs);
+  for (let i = 0; i < outs; i++) {
+    const name = output.getPortName(i);
+    console.log(name);
+    if (name.includes(outputName)) {
+      output.openPort(i);
+      console.log('Connected output', outputName);
+    }
+  }
+
+  process.on('exit', () => {
+    output.closePort();
+  });
+
+  return output;
+}
+
+exports.connect = connect;
